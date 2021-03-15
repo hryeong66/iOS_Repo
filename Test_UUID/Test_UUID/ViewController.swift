@@ -7,33 +7,38 @@
 
 import UIKit
 import AdSupport
+import AppTrackingTransparency
 
 class ViewController: UIViewController {
 
     
     @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var UUIDLabel: UILabel!
+    @IBOutlet weak var permissionBtn: UIButton!
+    @IBOutlet weak var ADUUIDLabel: UILabel!
+    @IBOutlet weak var VDUUIDLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UUIDLabel.numberOfLines = 0
+        ADUUIDLabel.numberOfLines = 0
+        VDUUIDLabel.numberOfLines = 0
         // Do any additional setup after loading the view.
-        
         
     }
 
     
-    
     @IBAction func touchUpSubmitUUID(_ sender: UIButton) {
+        let myAdUUID = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        ADUUIDLabel.text = myAdUUID
+        ADUUIDLabel.backgroundColor = getRandomColor()
         
-        UUIDLabel.text = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        UUIDLabel.backgroundColor = getRandomColor()
-        
-        print(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
-        print("\n-------------------")
+        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
+            VDUUIDLabel.text = uuid
+            VDUUIDLabel.backgroundColor = getRandomColor()
+        }
         
     }
+    
     
     func getRandomColor() -> UIColor{
             let randomRed:CGFloat = CGFloat(drand48())
@@ -42,5 +47,28 @@ class ViewController: UIViewController {
             return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
         }
 
+    
+    @IBAction func touchUpPermissionBtn(_ sender: Any) {
+        ATTrackingManager.requestTrackingAuthorization{ status in
+            switch status {
+            case .notDetermined:
+                break
+            case .restricted:
+                break
+            case .denied:
+                break
+            case .authorized:
+                break
+            default:
+                break
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
 }
 

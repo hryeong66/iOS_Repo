@@ -35,29 +35,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdz-sb-ttI">
+                                <rect key="frame" x="20" y="466" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAF-5t-aC8">
+                                <rect key="frame" x="170" y="570" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="permission"/>
+                                <connections>
+                                    <action selector="touchUpPermissionBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oq1-92-2vV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nyf-BO-2xN" secondAttribute="trailing" constant="20" id="7G5-4a-4Ah"/>
                             <constraint firstItem="xp0-BM-cei" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="7pg-oX-T7t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sdz-sb-ttI" secondAttribute="trailing" constant="20" id="Emp-OT-6p1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sft-no-X2M" secondAttribute="trailing" constant="100" id="I6a-Nl-ZaW"/>
                             <constraint firstItem="xp0-BM-cei" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="LnL-Xj-dJn"/>
+                            <constraint firstItem="sdz-sb-ttI" firstAttribute="top" secondItem="Nyf-BO-2xN" secondAttribute="bottom" constant="100" id="SkM-0N-ByN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xp0-BM-cei" secondAttribute="trailing" constant="100" id="Wja-J5-vlU"/>
                             <constraint firstItem="Nyf-BO-2xN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YwR-En-sbg"/>
+                            <constraint firstItem="sdz-sb-ttI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="a9V-qM-wjU"/>
                             <constraint firstItem="Sft-no-X2M" firstAttribute="top" secondItem="xp0-BM-cei" secondAttribute="bottom" constant="50" id="rcE-0F-Eng"/>
                             <constraint firstItem="Sft-no-X2M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="rsj-4w-STC"/>
                             <constraint firstItem="Nyf-BO-2xN" firstAttribute="top" secondItem="Sft-no-X2M" secondAttribute="bottom" constant="100" id="v09-MZ-7F0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="UUIDLabel" destination="Nyf-BO-2xN" id="xPK-yG-gIq"/>
+                        <outlet property="ADUUIDLabel" destination="Nyf-BO-2xN" id="Cva-AW-OMW"/>
+                        <outlet property="VDUUIDLabel" destination="sdz-sb-ttI" id="4AV-J6-N1Z"/>
+                        <outlet property="permissionBtn" destination="EAF-5t-aC8" id="Adv-gJ-xyb"/>
                         <outlet property="submitBtn" destination="xp0-BM-cei" id="Tdr-Lj-u56"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43" y="92"/>
+            <point key="canvasLocation" x="42.028985507246382" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>
