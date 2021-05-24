@@ -22,7 +22,10 @@
 		3CC5DB6B265B7E0300B958BB /* RunningTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC5DB69265B7E0300B958BB /* RunningTVC.swift */; };
 		3CC5DB6C265B7E0300B958BB /* RunningTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC5DB6A265B7E0300B958BB /* RunningTVC.xib */; };
 		3CC5DB6F265B854A00B958BB /* SwimmingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC5DB6E265B854A00B958BB /* SwimmingData.swift */; };
-		3CC5DB71265B8E0F00B958BB /* StrokeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC5DB70265B8E0F00B958BB /* StrokeVC.swift */; };
+		3CC5DB71265B8E0F00B958BB /* SwimmingWorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC5DB70265B8E0F00B958BB /* SwimmingWorkoutVC.swift */; };
+		3CF7ECBB265BBEA100A33BDA /* SwimWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF7ECBA265BBEA100A33BDA /* SwimWorkoutData.swift */; };
+		3CF7ECBF265BC6E700A33BDA /* SwimmingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF7ECBD265BC6E700A33BDA /* SwimmingTVC.swift */; };
+		3CF7ECC0265BC6E700A33BDA /* SwimmingTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF7ECBE265BC6E700A33BDA /* SwimmingTVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +47,10 @@
 		3CC5DB69265B7E0300B958BB /* RunningTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTVC.swift; sourceTree = "<group>"; };
 		3CC5DB6A265B7E0300B958BB /* RunningTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningTVC.xib; sourceTree = "<group>"; };
 		3CC5DB6E265B854A00B958BB /* SwimmingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimmingData.swift; sourceTree = "<group>"; };
-		3CC5DB70265B8E0F00B958BB /* StrokeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeVC.swift; sourceTree = "<group>"; };
+		3CC5DB70265B8E0F00B958BB /* SwimmingWorkoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimmingWorkoutVC.swift; sourceTree = "<group>"; };
+		3CF7ECBA265BBEA100A33BDA /* SwimWorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimWorkoutData.swift; sourceTree = "<group>"; };
+		3CF7ECBD265BC6E700A33BDA /* SwimmingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimmingTVC.swift; sourceTree = "<group>"; };
+		3CF7ECBE265BC6E700A33BDA /* SwimmingTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwimmingTVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		3C104D8C265A37CF005A6CF1 /* swimming-test-app */ = {
 			isa = PBXGroup;
 			children = (
+				3CF7ECBC265BC6CA00A33BDA /* Cell */,
 				3CC5DB6D265B852B00B958BB /* Model */,
 				3CC5DB66265B718300B958BB /* ViewControllers */,
 				3CB2BCB0265A9AEA00032489 /* swimming-test-app.entitlements */,
@@ -90,8 +97,6 @@
 				3C104D9B265A37D0005A6CF1 /* Info.plist */,
 				3CB2BCB4265A9D3500032489 /* HealthKitSetupAssistant.swift */,
 				3CB2BD04265AB29800032489 /* WorkoutDataStore.swift */,
-				3CC5DB69265B7E0300B958BB /* RunningTVC.swift */,
-				3CC5DB6A265B7E0300B958BB /* RunningTVC.xib */,
 			);
 			path = "swimming-test-app";
 			sourceTree = "<group>";
@@ -110,7 +115,7 @@
 				3C104D91265A37CF005A6CF1 /* ViewController.swift */,
 				3CC5DB62265B560700B958BB /* SwimmingVC.swift */,
 				3CC5DB64265B716E00B958BB /* WalkingRunningVC.swift */,
-				3CC5DB70265B8E0F00B958BB /* StrokeVC.swift */,
+				3CC5DB70265B8E0F00B958BB /* SwimmingWorkoutVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -120,8 +125,20 @@
 			children = (
 				3CC5DB67265B7AB900B958BB /* RunningData.swift */,
 				3CC5DB6E265B854A00B958BB /* SwimmingData.swift */,
+				3CF7ECBA265BBEA100A33BDA /* SwimWorkoutData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3CF7ECBC265BC6CA00A33BDA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3CC5DB69265B7E0300B958BB /* RunningTVC.swift */,
+				3CC5DB6A265B7E0300B958BB /* RunningTVC.xib */,
+				3CF7ECBD265BC6E700A33BDA /* SwimmingTVC.swift */,
+				3CF7ECBE265BC6E700A33BDA /* SwimmingTVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF7ECC0265BC6E700A33BDA /* SwimmingTVC.xib in Resources */,
 				3C104D9A265A37D0005A6CF1 /* LaunchScreen.storyboard in Resources */,
 				3CC5DB6C265B7E0300B958BB /* RunningTVC.xib in Resources */,
 				3C104D97265A37CF005A6CF1 /* Assets.xcassets in Resources */,
@@ -195,15 +213,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF7ECBF265BC6E700A33BDA /* SwimmingTVC.swift in Sources */,
 				3CC5DB6F265B854A00B958BB /* SwimmingData.swift in Sources */,
 				3C104D92265A37CF005A6CF1 /* ViewController.swift in Sources */,
 				3CC5DB63265B560700B958BB /* SwimmingVC.swift in Sources */,
 				3CB2BCB5265A9D3500032489 /* HealthKitSetupAssistant.swift in Sources */,
 				3CB2BD05265AB29800032489 /* WorkoutDataStore.swift in Sources */,
 				3C104D8E265A37CF005A6CF1 /* AppDelegate.swift in Sources */,
-				3CC5DB71265B8E0F00B958BB /* StrokeVC.swift in Sources */,
+				3CC5DB71265B8E0F00B958BB /* SwimmingWorkoutVC.swift in Sources */,
 				3C104D90265A37CF005A6CF1 /* SceneDelegate.swift in Sources */,
 				3CC5DB65265B716E00B958BB /* WalkingRunningVC.swift in Sources */,
+				3CF7ECBB265BBEA100A33BDA /* SwimWorkoutData.swift in Sources */,
 				3CC5DB6B265B7E0300B958BB /* RunningTVC.swift in Sources */,
 				3CC5DB68265B7AB900B958BB /* RunningData.swift in Sources */,
 			);

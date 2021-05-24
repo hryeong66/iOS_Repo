@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyf-7l-nva">
-                                <rect key="frame" x="32" y="190" width="295" height="95"/>
+                                <rect key="frame" x="32" y="190" width="295" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -40,23 +40,8 @@
                                     <action selector="touchUpToGetRunningData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppX-xZ-NNP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhX-2z-D1H">
-                                <rect key="frame" x="32" y="327" width="176" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" get distance samples"/>
-                                <connections>
-                                    <action selector="touchUpToGetDistanceSample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYK-tX-W18"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="283-PY-Uj1">
-                                <rect key="frame" x="44" y="396" width="283" height="121"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-B2-EUL">
-                                <rect key="frame" x="23" y="547" width="111" height="30"/>
+                                <rect key="frame" x="16" y="388" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="all workout Data"/>
                                 <connections>
@@ -64,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCI-3A-LNb">
-                                <rect key="frame" x="22" y="585" width="133" height="30"/>
+                                <rect key="frame" x="16" y="434" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="HeartRate Samples"/>
                                 <connections>
@@ -72,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aba-kJ-7re">
-                                <rect key="frame" x="22" y="623" width="73" height="30"/>
+                                <rect key="frame" x="16" y="483" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="get source"/>
                                 <connections>
@@ -80,11 +65,43 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myp-CP-kRp">
-                                <rect key="frame" x="16" y="661" width="136" height="30"/>
+                                <rect key="frame" x="16" y="530" width="136" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get walking running"/>
                                 <connections>
-                                    <action selector="pushToRunningView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Es7-lK-ruZ"/>
+                                    <action selector="pushToRunningView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HSc-T7-dpK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhX-2z-D1H">
+                                <rect key="frame" x="16" y="271" width="176" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" get distance samples"/>
+                                <connections>
+                                    <action selector="touchUpToGetDistanceSample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYK-tX-W18"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83H-us-jmi">
+                                <rect key="frame" x="16" y="591" width="216" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="get workout data about running"/>
+                                <connections>
+                                    <action selector="touchUpToGetRunningWorkoutData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ys7-bq-h3u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFy-na-mtf">
+                                <rect key="frame" x="16" y="643" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="get workout - swimming"/>
+                                <connections>
+                                    <action selector="touchUpToGetSwimmingWorkoutData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1T-3F-Z9c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-1k-cd6">
+                                <rect key="frame" x="16" y="713" width="248" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="swimming workout data 페이지로 이동"/>
+                                <connections>
+                                    <action selector="pushToSwimmingView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFc-YP-2NW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,7 +110,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="pnT-CS-X1m"/>
                     <connections>
-                        <outlet property="distanceSampleLabel" destination="283-PY-Uj1" id="xhm-W6-gQ3"/>
                         <outlet property="runningLabel" destination="Hyf-7l-nva" id="NPm-na-NbR"/>
                     </connections>
                 </viewController>
@@ -204,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="2647" y="89"/>
         </scene>
-        <!--StrokeVC-->
+        <!--Swimming WorkoutVC-->
         <scene sceneID="f5f-LR-8zJ">
             <objects>
-                <viewController restorationIdentifier="StrokeVC" storyboardIdentifier="StrokeVC" id="VwC-uA-Tnc" customClass="StrokeVC" customModule="swimming_test_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SwimmingWorkoutVC" storyboardIdentifier="SwimmingWorkoutVC" id="VwC-uA-Tnc" customClass="SwimmingWorkoutVC" customModule="swimming_test_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="teH-hb-e7h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,13 +231,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcI-R2-RCo">
                                 <rect key="frame" x="321" y="49.666666666666657" width="34" height="30"/>
                                 <state key="normal" title="Click"/>
+                                <connections>
+                                    <action selector="touchUpToGetSwimmingWorkoutData:" destination="VwC-uA-Tnc" eventType="touchUpInside" id="Wb7-q1-PLV"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pNp-wM-6aa">
                                 <rect key="frame" x="0.0" y="75" width="375" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스크로크 데이터 가져오기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLD-2l-gfy">
-                                <rect key="frame" x="20" y="54" width="171" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수영 운동 데이터 가져오기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLD-2l-gfy">
+                                <rect key="frame" x="20" y="54" width="175" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -240,6 +259,9 @@
                             <constraint firstItem="pNp-wM-6aa" firstAttribute="top" secondItem="QLD-2l-gfy" secondAttribute="bottom" id="zQ4-Sz-67E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="pNp-wM-6aa" id="Qpz-Dq-PC0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suq-ij-vEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
