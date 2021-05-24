@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9l5-EG-ubE">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16K-vt-CO5">
-                                <rect key="frame" x="161" y="74" width="52" height="30"/>
+                                <rect key="frame" x="161" y="104" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="권한허용"/>
                                 <connections>
@@ -40,15 +40,226 @@
                                     <action selector="touchUpToGetRunningData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppX-xZ-NNP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhX-2z-D1H">
+                                <rect key="frame" x="32" y="327" width="176" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" get distance samples"/>
+                                <connections>
+                                    <action selector="touchUpToGetDistanceSample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYK-tX-W18"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="283-PY-Uj1">
+                                <rect key="frame" x="44" y="396" width="283" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-B2-EUL">
+                                <rect key="frame" x="23" y="547" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="all workout Data"/>
+                                <connections>
+                                    <action selector="touchUpToGetAllWorkout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pA-L3-aZx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCI-3A-LNb">
+                                <rect key="frame" x="22" y="585" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="HeartRate Samples"/>
+                                <connections>
+                                    <action selector="touchUpToGetHeartRate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUJ-RN-4BK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aba-kJ-7re">
+                                <rect key="frame" x="22" y="623" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="get source"/>
+                                <connections>
+                                    <action selector="touchUpToGetSources:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jt2-G4-dR9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myp-CP-kRp">
+                                <rect key="frame" x="16" y="661" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Get walking running"/>
+                                <connections>
+                                    <action selector="pushToRunningView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Es7-lK-ruZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pnT-CS-X1m"/>
                     <connections>
+                        <outlet property="distanceSampleLabel" destination="283-PY-Uj1" id="xhm-W6-gQ3"/>
                         <outlet property="runningLabel" destination="Hyf-7l-nva" id="NPm-na-NbR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.2" y="88.669950738916256"/>
+        </scene>
+        <!--Walking RunningVC-->
+        <scene sceneID="HOa-XI-Pp3">
+            <objects>
+                <viewController storyboardIdentifier="WalkingRunningVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Mv-J8-FzX" customClass="WalkingRunningVC" customModule="swimming_test_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wyr-Ej-gYX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="걷기 + 달리기 거리 데이터 가져오기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42D-7f-lX5">
+                                <rect key="frame" x="25" y="69" width="238" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncl-EN-Y1I">
+                                <rect key="frame" x="321" y="64.666666666666671" width="34" height="30"/>
+                                <state key="normal" title="Click"/>
+                                <connections>
+                                    <action selector="touchUpToGetWalkingData:" destination="1Mv-J8-FzX" eventType="touchUpInside" id="5fE-w9-UdC"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8aW-ay-j3i">
+                                <rect key="frame" x="0.0" y="90" width="375" height="688"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yFN-jp-BZD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="42D-7f-lX5" firstAttribute="leading" secondItem="yFN-jp-BZD" secondAttribute="leading" constant="25" id="18k-VG-oGc"/>
+                            <constraint firstItem="8aW-ay-j3i" firstAttribute="leading" secondItem="yFN-jp-BZD" secondAttribute="leading" id="6zv-8c-uoe"/>
+                            <constraint firstItem="42D-7f-lX5" firstAttribute="top" secondItem="yFN-jp-BZD" secondAttribute="top" constant="25" id="Ln0-oQ-gKk"/>
+                            <constraint firstItem="yFN-jp-BZD" firstAttribute="trailing" secondItem="8aW-ay-j3i" secondAttribute="trailing" id="Sb2-75-buY"/>
+                            <constraint firstItem="Ncl-EN-Y1I" firstAttribute="centerY" secondItem="42D-7f-lX5" secondAttribute="centerY" id="XqQ-nj-rSR"/>
+                            <constraint firstItem="yFN-jp-BZD" firstAttribute="bottom" secondItem="8aW-ay-j3i" secondAttribute="bottom" id="mCT-AT-hVH"/>
+                            <constraint firstItem="8aW-ay-j3i" firstAttribute="top" secondItem="42D-7f-lX5" secondAttribute="bottom" id="rQA-xf-PJN"/>
+                            <constraint firstItem="yFN-jp-BZD" firstAttribute="trailing" secondItem="Ncl-EN-Y1I" secondAttribute="trailing" constant="20" id="yDl-rv-WJC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="8aW-ay-j3i" id="0Ex-ps-MMO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doC-Gp-ejA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789.5999999999999" y="88.669950738916256"/>
+        </scene>
+        <!--SwimmingVC-->
+        <scene sceneID="WQ4-2w-9zR">
+            <objects>
+                <viewController storyboardIdentifier="SwimmingVC" id="wZv-wL-kAl" customClass="SwimmingVC" customModule="swimming_test_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vfk-bF-DVd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수영거리 가져오기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d4-bi-PYW">
+                                <rect key="frame" x="20" y="54" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9av-p5-dBr">
+                                <rect key="frame" x="321" y="49.666666666666657" width="34" height="30"/>
+                                <state key="normal" title="Click"/>
+                                <connections>
+                                    <action selector="touchUpToGetSwimmingData:" destination="wZv-wL-kAl" eventType="touchUpInside" id="oFw-yP-EHz"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7cu-Y0-uFg">
+                                <rect key="frame" x="0.0" y="75" width="375" height="653"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-4B-AF0">
+                                <rect key="frame" x="187" y="738" width="168" height="30"/>
+                                <state key="normal" title="스트로크 데이터 가지러 가기"/>
+                                <connections>
+                                    <action selector="touchUpToGetStorkeData:" destination="wZv-wL-kAl" eventType="touchUpInside" id="DZP-Ic-sm2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gnl-q3-jVO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qom-4B-AF0" firstAttribute="top" secondItem="7cu-Y0-uFg" secondAttribute="bottom" constant="10" id="1fn-qY-gfi"/>
+                            <constraint firstItem="Gnl-q3-jVO" firstAttribute="bottom" secondItem="Qom-4B-AF0" secondAttribute="bottom" constant="10" id="F72-vi-0eZ"/>
+                            <constraint firstItem="4d4-bi-PYW" firstAttribute="top" secondItem="Gnl-q3-jVO" secondAttribute="top" constant="10" id="MXr-X8-AOw"/>
+                            <constraint firstItem="Gnl-q3-jVO" firstAttribute="trailing" secondItem="7cu-Y0-uFg" secondAttribute="trailing" id="Rrf-Su-rWR"/>
+                            <constraint firstItem="Gnl-q3-jVO" firstAttribute="trailing" secondItem="9av-p5-dBr" secondAttribute="trailing" constant="20" id="cdq-nc-Ka9"/>
+                            <constraint firstItem="9av-p5-dBr" firstAttribute="centerY" secondItem="4d4-bi-PYW" secondAttribute="centerY" id="g7q-kB-fOr"/>
+                            <constraint firstItem="Gnl-q3-jVO" firstAttribute="trailing" secondItem="Qom-4B-AF0" secondAttribute="trailing" constant="20" id="hND-jT-Vq1"/>
+                            <constraint firstItem="7cu-Y0-uFg" firstAttribute="leading" secondItem="Gnl-q3-jVO" secondAttribute="leading" id="nC5-7k-sYK"/>
+                            <constraint firstItem="7cu-Y0-uFg" firstAttribute="top" secondItem="4d4-bi-PYW" secondAttribute="bottom" id="pY2-t1-DIq"/>
+                            <constraint firstItem="4d4-bi-PYW" firstAttribute="leading" secondItem="Gnl-q3-jVO" secondAttribute="leading" constant="20" id="vc4-N3-lSK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="swimTableView" destination="7cu-Y0-uFg" id="bXG-mF-9JV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1NE-oe-uAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2647" y="89"/>
+        </scene>
+        <!--StrokeVC-->
+        <scene sceneID="f5f-LR-8zJ">
+            <objects>
+                <viewController restorationIdentifier="StrokeVC" storyboardIdentifier="StrokeVC" id="VwC-uA-Tnc" customClass="StrokeVC" customModule="swimming_test_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="teH-hb-e7h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcI-R2-RCo">
+                                <rect key="frame" x="321" y="49.666666666666657" width="34" height="30"/>
+                                <state key="normal" title="Click"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pNp-wM-6aa">
+                                <rect key="frame" x="0.0" y="75" width="375" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스크로크 데이터 가져오기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLD-2l-gfy">
+                                <rect key="frame" x="20" y="54" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iGd-r0-LIB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QLD-2l-gfy" firstAttribute="leading" secondItem="iGd-r0-LIB" secondAttribute="leading" constant="20" id="JzX-w8-0eK"/>
+                            <constraint firstItem="pNp-wM-6aa" firstAttribute="leading" secondItem="iGd-r0-LIB" secondAttribute="leading" id="M4A-TC-EdK"/>
+                            <constraint firstItem="iGd-r0-LIB" firstAttribute="bottom" secondItem="pNp-wM-6aa" secondAttribute="bottom" id="NwZ-0a-tP7"/>
+                            <constraint firstItem="lcI-R2-RCo" firstAttribute="centerY" secondItem="QLD-2l-gfy" secondAttribute="centerY" id="TwB-Cd-Nd6"/>
+                            <constraint firstItem="iGd-r0-LIB" firstAttribute="trailing" secondItem="pNp-wM-6aa" secondAttribute="trailing" id="UAM-F9-Fzd"/>
+                            <constraint firstItem="iGd-r0-LIB" firstAttribute="trailing" secondItem="lcI-R2-RCo" secondAttribute="trailing" constant="20" id="ilM-Zl-CZz"/>
+                            <constraint firstItem="QLD-2l-gfy" firstAttribute="top" secondItem="iGd-r0-LIB" secondAttribute="top" constant="10" id="yZ4-ro-kjU"/>
+                            <constraint firstItem="pNp-wM-6aa" firstAttribute="top" secondItem="QLD-2l-gfy" secondAttribute="bottom" id="zQ4-Sz-67E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Suq-ij-vEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3513" y="89"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZVh-1W-X4a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9l5-EG-ubE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l97-zN-LQd">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sf1-Dv-OCn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhq-BB-7kc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="96.799999999999997" y="88.669950738916256"/>
         </scene>
