@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var runningLabel: UILabel!
-    @IBOutlet weak var distanceSampleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -19,7 +18,6 @@ class ViewController: UIViewController {
     
     func setUI(){
         runningLabel.numberOfLines = 0
-        distanceSampleLabel.numberOfLines = 0
     }
     
     @IBAction func pushToRunningView(_ sender: Any) {
@@ -27,6 +25,13 @@ class ViewController: UIViewController {
          
         self.navigationController?.pushViewController(nextVC , animated: true)
     }
+    
+    @IBAction func pushToSwimmingView(_ sender: Any) {
+        guard let nextVC = storyboard?.instantiateViewController(identifier: SwimmingWorkoutVC.identifier) else{return}
+         
+        self.navigationController?.pushViewController(nextVC , animated: true)
+    }
+    
     
     @IBAction func touchUpToAuthorizeHealthKit(_ sender: Any) {
         authorizeHealthKit()
@@ -58,7 +63,6 @@ class ViewController: UIViewController {
     @IBAction func touchUpToGetDistanceSample(_ sender: Any) {
         WorkoutDataStore.readAssociatedSamples { (samples, errer) in
             guard let sampleList = samples else {
-                self.distanceSampleLabel.text = "sample로 넘어오는게 없음"
                 return
             }
             var contents = ""
@@ -68,7 +72,7 @@ class ViewController: UIViewController {
                 contents += "-----------------------------------"
             }
             
-            self.distanceSampleLabel.text = contents
+            print(contents)
         }
         
     }
@@ -117,17 +121,56 @@ class ViewController: UIViewController {
     
     
     @IBAction func touchUpToGetSources(_ sender: Any) {
-        WorkoutDataStore.loadHealthKitSource{(sources) in
-            guard let healthSources = sources else{
-                print("nil 넘어옴")
+//        WorkoutDataStore.loadHealthKitSource{(sources) in
+//            guard let healthSources = sources else{
+//                print("nil 넘어옴")
+//                return
+//            }
+//            for src in healthSources{
+//                print(src.name)
+//                print(src.bundleIdentifier)
+//            }
+//        }
+        
+        WorkoutDataStore.loadWorkoutHKSource()
+    }
+    
+    
+    @IBAction func touchUpToGetRunningWorkoutData(_ sender: Any) {
+        
+        WorkoutDataStore.readRunningWorkout{(result, error) in
+            guard let samples = result else {
+                print("넘어온 sample이 없음")
                 return
             }
-            for src in healthSources{
-                print(src.name)
-                print(src.bundleIdentifier)
+            
+            for sample in samples{
+                print(sample.startDate)
+                print(sample.endDate)
             }
+            
         }
     }
+    
+    @IBAction func touchUpToGetSwimmingWorkoutData(_ sender: Any) {
+        WorkoutDataStore.readSwimmingWorkout{(result, errer) in
+            guard let samples = result else {
+                print("넘겨져온 값 없음")
+                return
+            }
+            print("메인에서 \(samples.count)")
+            
+            for sample in samples{
+                print(sample.startDate)
+                print(sample.endDate)
+            }
+            
+        }
+        
+    }
+    
+    
+    
 }
 
 
