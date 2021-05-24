@@ -12,69 +12,7 @@ class WorkoutDataStore {
     static let healthStore = HKHealthStore()
     static var sourceSet: Set<HKSource> = []
     
-    static func loadHealthKitSource(completion: @escaping (Set<HKSource>?) -> Void ){
-        guard let sampleType = HKObjectType.quantityType(forIdentifier: .distanceSwimming) else {
-            fatalError("*** Unable to get the step count type ***")
-        }
-        print("sample type 가져옴")
-        print(sampleType)
-        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
-        
-        let query = HKSourceQuery(sampleType: sampleType,
-                                  samplePredicate: predicate){ (query, result, error) in
-            guard let samples = result else{
-                print("results로 넘겨져 오는게 없음")
-                completion(nil)
-                return
-            }
-            
-            
-            for source in samples{
-                print(source)
-                print("----------")
-                sourceSet.insert(source)
-            }
-            print(samples.count)
-            
-            completion(samples)
-        }
-        
-        healthStore.execute(query)
-    }
     
-    class func loadAvailableSource(){
-        guard let sampleType = HKObjectType.quantityType(forIdentifier: .height) else {
-            fatalError("*** Unable to get the step count type ***")
-        }
-        
-        print("sample type 가져옴")
-        print(sampleType)
-        let query = HKSourceQuery(sampleType: sampleType, samplePredicate: nil) { (query, sourcesOrNil, errorOrNil) in
-            print("HKSourceQuery 클로저")
-            guard let sources = sourcesOrNil else {
-                print("sources가 아무것도 없나??")
-                return
-            }
-            
-            print(sources)
-            print("-----가져온 source----")
-            
-            for source in sources {
-                sourceSet.insert(source)
-                print(source)
-            }
-            
-            print("source 다 가져옴")
-            
-            DispatchQueue.main.async {
-                // Update the UI here.
-            }
-        }
-        HKHealthStore().execute(query)
-        
-        
-    }
     
     class func loadRunningWorkouts(completion:
                                     @escaping ([HKWorkout]?, Error?) -> Void) {
@@ -167,7 +105,7 @@ class WorkoutDataStore {
     }
     
     static func readAssociatedSamples(completion:
-                                @escaping ([HKQuantitySample]?, Error?) -> Void){
+                                        @escaping ([HKQuantitySample]?, Error?) -> Void){
         
         guard let distanceType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning) else {
             fatalError("*** Unable to create a distance type ***")
@@ -201,7 +139,7 @@ class WorkoutDataStore {
     
     
     static func readWorkoutType(completion:
-                            @escaping ([HKSample]?, Error?) -> Void){
+                                    @escaping ([HKSample]?, Error?) -> Void){
         let sampleType = HKObjectType.workoutType()
         let startDateSort = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         
@@ -222,6 +160,97 @@ class WorkoutDataStore {
     }
     
     
+    
+}
+
+// MARK: read sources
+extension WorkoutDataStore {
+    static func loadHealthKitSource(completion: @escaping (Set<HKSource>?) -> Void ){
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .distanceSwimming) else {
+            fatalError("*** Unable to get the step count type ***")
+        }
+        print("sample type 가져옴")
+        print(sampleType)
+        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let query = HKSourceQuery(sampleType: sampleType,
+                                  samplePredicate: predicate){ (query, result, error) in
+            guard let samples = result else{
+                print("results로 넘겨져 오는게 없음")
+                completion(nil)
+                return
+            }
+            
+            
+            for source in samples{
+                print(source)
+                print("----------")
+                sourceSet.insert(source)
+            }
+            print(samples.count)
+            
+            completion(samples)
+        }
+        
+        healthStore.execute(query)
+    }
+    
+    class func loadAvailableSource(){
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .height) else {
+            fatalError("*** Unable to get the step count type ***")
+        }
+        
+        print("sample type 가져옴")
+        print(sampleType)
+        let query = HKSourceQuery(sampleType: sampleType, samplePredicate: nil) { (query, sourcesOrNil, errorOrNil) in
+            print("HKSourceQuery 클로저")
+            guard let sources = sourcesOrNil else {
+                print("sources가 아무것도 없나??")
+                return
+            }
+            
+            print(sources)
+            print("-----가져온 source----")
+            
+            for source in sources {
+                sourceSet.insert(source)
+                print(source)
+            }
+            
+            print("source 다 가져옴")
+            
+            DispatchQueue.main.async {
+                // Update the UI here.
+            }
+        }
+        HKHealthStore().execute(query)
+    }
+    
+    static func loadWorkoutHKSource() {
+        let sampleType = HKObjectType.workoutType()
+        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let sourceQuery = HKSourceQuery.init(sampleType: sampleType,
+                                             samplePredicate: predicate){(query, result, error) in
+            guard let sources = result else{
+                print("source nil")
+                return
+            }
+            
+            print("source 가져와졌음 \(sources.count)")
+            
+            sourceSet.removeAll()
+            for src in sources {
+                print(src.name)
+                print(src.bundleIdentifier)
+                sourceSet.insert(src)
+            }
+            print(query)
+        }
+        healthStore.execute(sourceQuery)
+    }
     
 }
 
@@ -255,7 +284,7 @@ extension WorkoutDataStore{
     }
     
     static func readDistanceWalkingRunning(completion: @escaping ([RunningData]?, Error?) -> Void){
-       guard let sampleType = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning) else{
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning) else{
             return
         }
         let startDate = Calendar.current.date(byAdding: .month,
@@ -378,5 +407,69 @@ extension WorkoutDataStore {
         }
         healthStore.execute(query)
     }
+    
+    static func readSwimmingWorkout(completion: @escaping ([SwimWorkoutData]?, Error?) -> Void ){
+        let sampleType = HKObjectType.workoutType()
+        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let runningPredicate = HKQuery.predicateForWorkouts(with: .swimming)
+        let sourcePredicate = HKQuery.predicateForObjects(from: sourceSet)
+        
+        let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [runningPredicate, sourcePredicate])
+        
+        let query = HKSampleQuery(sampleType: sampleType,
+                                  predicate: compound,
+                                  limit: 0,
+                                  sortDescriptors: [sortDescriptor]){(query, result, error) in
+            guard let samples = result else {
+                print("workout으로 넘어져 오는게 없음")
+                completion(nil, error)
+                return
+            }
+            print(samples.count)
+            var swimmingWorkoutList: [SwimWorkoutData] = []
+            for sample in samples{
+                let start = sample.startDate.description
+                let end = sample.endDate.description
+                
+                let src = sample as! HKWorkout
+                var duration = src.duration
+                duration = floor(duration / 100) * 100
+                
+                let meterUnit = HKUnit.meter()
+                var totalDistance = src.totalDistance?.doubleValue(for: meterUnit) ?? 1
+                //totalDistance = floor(totalDistance/1000) * 1000
+                
+                
+                let smallCalorie = HKUnit.smallCalorie()
+                var totalEnergy = src.totalEnergyBurned?.doubleValue(for: smallCalorie) ?? 0
+                
+                let workoutType = src.workoutActivityType
+                var strokes = src.totalSwimmingStrokeCount?.doubleValue(for: HKUnit.count()) ?? 0
+                let metaData = src.metadata ?? [:]
+                
+                let swimming = SwimWorkoutData(startDate: start,
+                                           endDate: end,
+                                           duration: duration,
+                                           totalDistance: totalDistance,
+                                           totalEnergyBured: totalEnergy,
+                                           workourActivityType: workoutType,
+                                           totalSwimmingStrokeCount: strokes,
+                                           metadata: metaData)
+                
+                
+                swimmingWorkoutList.append(swimming)
+                swimming.display()
+                
+            }
+            completion(swimmingWorkoutList, nil)
+            
+        }
+        healthStore.execute(query)
+    }
+    
     
 }
