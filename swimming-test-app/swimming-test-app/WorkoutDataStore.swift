@@ -415,10 +415,10 @@ extension WorkoutDataStore {
         
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        let runningPredicate = HKQuery.predicateForWorkouts(with: .swimming)
+        let swimmingPredicate = HKQuery.predicateForWorkouts(with: .swimming)
         let sourcePredicate = HKQuery.predicateForObjects(from: sourceSet)
         
-        let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [runningPredicate, sourcePredicate])
+        let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [swimmingPredicate, sourcePredicate])
         
         let query = HKSampleQuery(sampleType: sampleType,
                                   predicate: compound,
