@@ -14,6 +14,7 @@
 		3CB34926266E6C1E00EB1726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB34925266E6C1E00EB1726 /* Assets.xcassets */; };
 		3CB34929266E6C1E00EB1726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB34927266E6C1E00EB1726 /* LaunchScreen.storyboard */; };
 		3CB34933266E6C2D00EB1726 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB34932266E6C2D00EB1726 /* HealthKit.framework */; };
+		7ACDDFDDD78DB23121B354A9 /* Pods_swimming_test_app_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A1F428E87F6611520F90F6 /* Pods_swimming_test_app_2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,9 @@
 		3CB3492A266E6C1E00EB1726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CB34930266E6C2D00EB1726 /* swimming-test-app-2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "swimming-test-app-2.entitlements"; sourceTree = "<group>"; };
 		3CB34932266E6C2D00EB1726 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		9DD7C9D1F641CBAEB58F038C /* Pods-swimming-test-app-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swimming-test-app-2.debug.xcconfig"; path = "Target Support Files/Pods-swimming-test-app-2/Pods-swimming-test-app-2.debug.xcconfig"; sourceTree = "<group>"; };
+		C4E03593C8F1B53B775D025A /* Pods-swimming-test-app-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swimming-test-app-2.release.xcconfig"; path = "Target Support Files/Pods-swimming-test-app-2/Pods-swimming-test-app-2.release.xcconfig"; sourceTree = "<group>"; };
+		C6A1F428E87F6611520F90F6 /* Pods_swimming_test_app_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swimming_test_app_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CB34933266E6C2D00EB1726 /* HealthKit.framework in Frameworks */,
+				7ACDDFDDD78DB23121B354A9 /* Pods_swimming_test_app_2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,7 @@
 				3CB3491B266E6C1D00EB1726 /* swimming-test-app-2 */,
 				3CB3491A266E6C1D00EB1726 /* Products */,
 				3CB34931266E6C2D00EB1726 /* Frameworks */,
+				CEDFB892495195A01EE69A59 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +83,19 @@
 			isa = PBXGroup;
 			children = (
 				3CB34932266E6C2D00EB1726 /* HealthKit.framework */,
+				C6A1F428E87F6611520F90F6 /* Pods_swimming_test_app_2.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEDFB892495195A01EE69A59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DD7C9D1F641CBAEB58F038C /* Pods-swimming-test-app-2.debug.xcconfig */,
+				C4E03593C8F1B53B775D025A /* Pods-swimming-test-app-2.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CB3492D266E6C1E00EB1726 /* Build configuration list for PBXNativeTarget "swimming-test-app-2" */;
 			buildPhases = (
+				99A97B1B3C6DA95047497929 /* [CP] Check Pods Manifest.lock */,
 				3CB34915266E6C1D00EB1726 /* Sources */,
 				3CB34916266E6C1D00EB1726 /* Frameworks */,
 				3CB34917266E6C1D00EB1726 /* Resources */,
+				877F161A8B4E7AAC72A9F1E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,6 +164,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		877F161A8B4E7AAC72A9F1E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swimming-test-app-2/Pods-swimming-test-app-2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swimming-test-app-2/Pods-swimming-test-app-2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swimming-test-app-2/Pods-swimming-test-app-2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99A97B1B3C6DA95047497929 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swimming-test-app-2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3CB34915266E6C1D00EB1726 /* Sources */ = {
@@ -297,6 +358,7 @@
 		};
 		3CB3492E266E6C1E00EB1726 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD7C9D1F641CBAEB58F038C /* Pods-swimming-test-app-2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,6 +379,7 @@
 		};
 		3CB3492F266E6C1E00EB1726 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4E03593C8F1B53B775D025A /* Pods-swimming-test-app-2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
