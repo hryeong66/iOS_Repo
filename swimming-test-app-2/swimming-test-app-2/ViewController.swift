@@ -55,7 +55,6 @@ class ViewController: UIViewController {
         try! csv.write(row: ["1", "bar"])
 
         csv.stream.close()
-        
     }
     
     func getCSVWriter(){
@@ -69,6 +68,7 @@ class ViewController: UIViewController {
         csv.stream.close()
         
     }
+    
     
 }
 
