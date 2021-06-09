@@ -42,7 +42,10 @@ class ViewController: UIViewController {
 
     @IBAction func touchUpToStartWriter(_ sender: Any) {
      
+        let documentURL = setNewCSVFile()
         
+        print(documentURL)
+        print("-----------------")
         
         let stream = OutputStream(url: documentURL , append: true)!
         let csv = try! CSVWriter(stream: stream)
