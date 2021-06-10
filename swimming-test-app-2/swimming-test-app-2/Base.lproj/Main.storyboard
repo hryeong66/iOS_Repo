@@ -17,24 +17,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtO-dp-YJk">
-                                <rect key="frame" x="163" y="551" width="68" height="30"/>
+                                <rect key="frame" x="25" y="745" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="CSV write"/>
                                 <connections>
                                     <action selector="touchUpToStartWriter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7E-lg-cqk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKm-xB-Yhp">
-                                <rect key="frame" x="176" y="133" width="42" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-MC-6K0">
+                                <rect key="frame" x="20" y="112" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HK8-Fr-Xtj">
-                                <rect key="frame" x="185" y="709" width="46" height="30"/>
+                                <state key="normal" title="1. 소스 가져오기"/>
+                                <connections>
+                                    <action selector="touchUpToGetSources:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qOy-LL-7NX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptM-vL-fzo">
+                                <rect key="frame" x="20" y="74" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="0. 권한 허용"/>
+                                <connections>
+                                    <action selector="touchUpToAuthorizeAboutHealthKit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Alg-qF-cQD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-W3-SiY">
+                                <rect key="frame" x="20" y="150" width="218" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2. running workout data 가져오기"/>
+                                <connections>
+                                    <action selector="touchUpToGetRunningData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zlQ-YR-nJQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXr-iZ-PvD">
+                                <rect key="frame" x="20" y="198" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="3. 수영거리로 데이터 가져오기"/>
+                                <connections>
+                                    <action selector="touchUpToGetSwimmingDistance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yTr-CQ-qB5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3C-xd-EmE">
+                                <rect key="frame" x="20" y="251" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="4. 수영 스트로크 데이터 가져오기"/>
+                                <connections>
+                                    <action selector="touchUpToGetgetAllStrokeDistance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yiG-Vj-ytj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
