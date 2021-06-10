@@ -143,6 +143,7 @@ class ViewController: UIViewController {
                 print("넘어온 sample이 없음")
                 return
             }
+            print("sample 갯수 \(samples.count)")
             
             for sample in samples{
                 print(sample.startDate)
@@ -196,8 +197,6 @@ extension ViewController{
       }
       
     }
-    
-    
 
 }
 
