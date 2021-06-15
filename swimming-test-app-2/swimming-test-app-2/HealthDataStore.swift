@@ -49,9 +49,14 @@ class HealthDataStore{
 }
 
 
+
+
+
+
 //MARK: Swimming
 extension HealthDataStore{
     
+    //수영 전체 workoutData
     static func readSwimmingWorkout(completion: @escaping ([SwimWorkoutData]?, Error?) -> Void ){
         let sampleType = HKObjectType.workoutType()
         let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
@@ -116,7 +121,7 @@ extension HealthDataStore{
         healthStore.execute(query)
     }
     
-    static func getAllSwimmingDistance(completion: @escaping ([HKSample]?, Error?) -> Void){
+    static func getAllSwimmingDistance(completion: @escaping ([SwimmingDistanceData]?, Error?) -> Void){
         guard let sampleType = HKObjectType.quantityType(forIdentifier: .distanceSwimming) else{
             return
         }
@@ -137,9 +142,8 @@ extension HealthDataStore{
                 return
             }
             
-            
-            
-            completion(sampleList, nil)
+            let distanceList = refineSwimmingDistanceData(samples: sampleList)
+            completion(distanceList, nil)
         }
         healthStore.execute(query)
     }
@@ -164,12 +168,69 @@ extension HealthDataStore{
                 completion(nil, error)
                 return
             }
+
+            
             completion(sampleList, nil)
         }
         healthStore.execute(query)
     }
     
+
+    
 }
+
+//MARK: Data 처리
+extension HealthDataStore{
+    static func refineSwimmingDistanceData(samples: [HKSample]) -> [SwimmingDistanceData]{
+        //시작시간, 종료시간 , 운동시간, 거리
+        var list: [SwimmingDistanceData] = []
+
+        for src in samples{
+            let timeDate = refineDateData(start: src.startDate, end: src.endDate)
+            let tmp = SwimmingDistanceData()
+            list.append(tmp)
+        }
+        return list
+    }
+
+    static func refineSwimmingStrokeData(samples: [HKSample]) -> [SwimmingStrokeData]{
+        //시작시간, 종료시간, 스트로크 종류
+        var list: [SwimmingStrokeData] = []
+        for src in samples{
+            let timeDate = refineDateData(start: src.startDate, end: src.endDate)
+            
+            let tmp = SwimmingStrokeData()
+
+//                if let quantitySample = sample as? HKQuantitySample {
+//                    let strokes = quantitySample.quantity.doubleValue(for: HKUnit.count())
+//                    print(strokes)
+//                }
+//
+//                if let strokeStyleInt = sample.metadata?["HKSwimmingStrokeStyle"] as? Int,
+//                   let strokeStyle = HKSwimmingStrokeStyle(rawValue: strokeStyleInt){
+//                    print(strokeStyle)
+//                }
+
+
+        }
+        return list
+    }
+
+    static func refineDateData(start: Date, end: Date) -> [String]{
+        //데이터형식 2019-09-17 13:40:00
+        let format = DateFormatter()
+        format.locale = Locale(identifier: "ko")
+        let useTime = Int(end.timeIntervalSince(start))
+        format.dateFormat = "HH:mm"
+        let startTime = format.string(from: start)
+        let endTime = format.string(from: end)
+        return [startTime, endTime, useTime.description]
+    }
+
+}
+
+
+
 
 
 //MARK: Running
