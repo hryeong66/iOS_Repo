@@ -37,15 +37,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="0. 권한 허용"/>
                                 <connections>
-                                    <action selector="touchUpToAuthorizeAboutHealthKit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Alg-qF-cQD"/>
+                                    <action selector="getAuthorizationAtHealthKit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUb-P6-Oth"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-W3-SiY">
-                                <rect key="frame" x="20" y="150" width="218" height="30"/>
+                                <rect key="frame" x="17" y="150" width="224" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="2. running workout data 가져오기"/>
+                                <state key="normal" title="2. Swiming workout data 가져오기"/>
                                 <connections>
-                                    <action selector="touchUpToGetRunningData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zlQ-YR-nJQ"/>
+                                    <action selector="touchUpToGetSwimWorkoutData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LnX-2G-PEm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXr-iZ-PvD">
@@ -53,16 +53,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="3. 수영거리로 데이터 가져오기"/>
                                 <connections>
-                                    <action selector="touchUpToGetSwimmingDistance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yTr-CQ-qB5"/>
+                                    <action selector="touchUpToGetSwimmingDistance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I1E-M0-b10"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3C-xd-EmE">
                                 <rect key="frame" x="20" y="251" width="198" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="4. 수영 스트로크 데이터 가져오기"/>
-                                <connections>
-                                    <action selector="touchUpToGetgetAllStrokeDistance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yiG-Vj-ytj"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

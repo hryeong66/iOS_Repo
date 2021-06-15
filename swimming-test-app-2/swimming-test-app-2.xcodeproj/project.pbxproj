@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C79AAB72677601400CF4B08 /* SwimWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79AAB42677601400CF4B08 /* SwimWorkoutData.swift */; };
+		3C79AAB82677601400CF4B08 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79AAB52677601400CF4B08 /* HealthKitSetupAssistant.swift */; };
+		3C79AAB92677601400CF4B08 /* HealthDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79AAB62677601400CF4B08 /* HealthDataStore.swift */; };
+		3C79AABB2677776000CF4B08 /* SwimmingDataInText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79AABA2677776000CF4B08 /* SwimmingDataInText.swift */; };
 		3CB3491D266E6C1D00EB1726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3491C266E6C1D00EB1726 /* AppDelegate.swift */; };
 		3CB3491F266E6C1D00EB1726 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3491E266E6C1D00EB1726 /* SceneDelegate.swift */; };
 		3CB34921266E6C1D00EB1726 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB34920266E6C1D00EB1726 /* ViewController.swift */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C79AAB42677601400CF4B08 /* SwimWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwimWorkoutData.swift; sourceTree = "<group>"; };
+		3C79AAB52677601400CF4B08 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		3C79AAB62677601400CF4B08 /* HealthDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataStore.swift; sourceTree = "<group>"; };
+		3C79AABA2677776000CF4B08 /* SwimmingDataInText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimmingDataInText.swift; sourceTree = "<group>"; };
 		3CB34919266E6C1D00EB1726 /* swimming-test-app-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swimming-test-app-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB3491C266E6C1D00EB1726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CB3491E266E6C1D00EB1726 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +75,9 @@
 		3CB3491B266E6C1D00EB1726 /* swimming-test-app-2 */ = {
 			isa = PBXGroup;
 			children = (
+				3C79AAB62677601400CF4B08 /* HealthDataStore.swift */,
+				3C79AAB52677601400CF4B08 /* HealthKitSetupAssistant.swift */,
+				3C79AAB42677601400CF4B08 /* SwimWorkoutData.swift */,
 				3CB34930266E6C2D00EB1726 /* swimming-test-app-2.entitlements */,
 				3CB3491C266E6C1D00EB1726 /* AppDelegate.swift */,
 				3CB3491E266E6C1D00EB1726 /* SceneDelegate.swift */,
@@ -75,6 +86,7 @@
 				3CB34925266E6C1E00EB1726 /* Assets.xcassets */,
 				3CB34927266E6C1E00EB1726 /* LaunchScreen.storyboard */,
 				3CB3492A266E6C1E00EB1726 /* Info.plist */,
+				3C79AABA2677776000CF4B08 /* SwimmingDataInText.swift */,
 			);
 			path = "swimming-test-app-2";
 			sourceTree = "<group>";
@@ -94,7 +106,6 @@
 				9DD7C9D1F641CBAEB58F038C /* Pods-swimming-test-app-2.debug.xcconfig */,
 				C4E03593C8F1B53B775D025A /* Pods-swimming-test-app-2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,8 +224,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CB34921266E6C1D00EB1726 /* ViewController.swift in Sources */,
+				3C79AABB2677776000CF4B08 /* SwimmingDataInText.swift in Sources */,
+				3C79AAB72677601400CF4B08 /* SwimWorkoutData.swift in Sources */,
 				3CB3491D266E6C1D00EB1726 /* AppDelegate.swift in Sources */,
+				3C79AAB92677601400CF4B08 /* HealthDataStore.swift in Sources */,
 				3CB3491F266E6C1D00EB1726 /* SceneDelegate.swift in Sources */,
+				3C79AAB82677601400CF4B08 /* HealthKitSetupAssistant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
