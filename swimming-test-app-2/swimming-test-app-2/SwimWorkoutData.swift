@@ -30,5 +30,30 @@ struct SwimWorkoutData {
         print("metadata =  \(metadata)")
         print("---------------------------")
     }
+}
+
+struct SwimmingDistanceData {
+    var startDate: String = ""
+    var endDate: String = ""
+    var useTime: Int = 0
+    var labLength: String = "25"
+    
+    func changeStringArray() -> [String]{
+        return [startDate, endDate, useTime.description, "\(labLength)m"]
+    }
+}
+
+
+struct SwimmingStrokeData{
+    var startDate: String = ""
+    var endDate: String = ""
+    var count: Int = 0
+    var strokeStyle: Int = 0
+    var storkeStyleENG:String = ""
+    var strokeStyleKR:String = ""
+
+    func changeStringArray() -> [String] {
+        return [strokeStyle.description, strokeStyleKR, storkeStyleENG]
+    }
     
 }
