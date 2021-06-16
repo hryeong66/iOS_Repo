@@ -13,6 +13,7 @@
 		3C6DC51B2679B95100D39F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6DC5192679B95100D39F98 /* Main.storyboard */; };
 		3C6DC51D2679B95300D39F98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6DC51C2679B95300D39F98 /* Assets.xcassets */; };
 		3C6DC5202679B95400D39F98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6DC51E2679B95400D39F98 /* LaunchScreen.storyboard */; };
+		F4B59A6A7D91060D3E749D7C /* Pods_UITextViewTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A961B71F7815D77587E53798 /* Pods_UITextViewTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		3C6DC51C2679B95300D39F98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C6DC51F2679B95400D39F98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C6DC5212679B95400D39F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E63928303D7597A43E584CC /* Pods-UITextViewTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITextViewTest.debug.xcconfig"; path = "Target Support Files/Pods-UITextViewTest/Pods-UITextViewTest.debug.xcconfig"; sourceTree = "<group>"; };
+		A961B71F7815D77587E53798 /* Pods_UITextViewTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITextViewTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3B24E2914011F6BA6744971 /* Pods-UITextViewTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITextViewTest.release.xcconfig"; path = "Target Support Files/Pods-UITextViewTest/Pods-UITextViewTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B59A6A7D91060D3E749D7C /* Pods_UITextViewTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08827016EEBF462C87857EA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A961B71F7815D77587E53798 /* Pods_UITextViewTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C6DC5072679B95100D39F98 = {
 			isa = PBXGroup;
 			children = (
 				3C6DC5122679B95100D39F98 /* UITextViewTest */,
 				3C6DC5112679B95100D39F98 /* Products */,
+				714F1BA6C738E20BBADC0ADC /* Pods */,
+				08827016EEBF462C87857EA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = UITextViewTest;
 			sourceTree = "<group>";
 		};
+		714F1BA6C738E20BBADC0ADC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E63928303D7597A43E584CC /* Pods-UITextViewTest.debug.xcconfig */,
+				E3B24E2914011F6BA6744971 /* Pods-UITextViewTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C6DC5242679B95400D39F98 /* Build configuration list for PBXNativeTarget "UITextViewTest" */;
 			buildPhases = (
+				0FF34E782648939BB8B1D9A1 /* [CP] Check Pods Manifest.lock */,
 				3C6DC50C2679B95100D39F98 /* Sources */,
 				3C6DC50D2679B95100D39F98 /* Frameworks */,
 				3C6DC50E2679B95100D39F98 /* Resources */,
+				FFE4F647E4B6DF88F8283762 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FF34E782648939BB8B1D9A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UITextViewTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFE4F647E4B6DF88F8283762 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UITextViewTest/Pods-UITextViewTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UITextViewTest/Pods-UITextViewTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UITextViewTest/Pods-UITextViewTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C6DC50C2679B95100D39F98 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		3C6DC5252679B95400D39F98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E63928303D7597A43E584CC /* Pods-UITextViewTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		3C6DC5262679B95400D39F98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3B24E2914011F6BA6744971 /* Pods-UITextViewTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
