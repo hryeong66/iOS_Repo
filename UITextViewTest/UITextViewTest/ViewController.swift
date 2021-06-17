@@ -11,6 +11,9 @@ import SnapKit
 class ViewController: UIViewController {
 
     private let restoreFrameValue = 0.0
+    
+    @IBOutlet weak var contentTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,44 +37,23 @@ class ViewController: UIViewController {
         
         textView.delegate = self
         
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        setContentTextViewConstraint()
         
     }
     
-    @objc func keyboardWillAppear(noti: Notification){
-        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            self.view.frame.origin.y -= keyboardHeight
+    func setContentTextViewConstraint(){
+        contentTextView.translatesAutoresizingMaskIntoConstraints = false
+        contentTextView.snp.makeConstraints{make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(200)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(50)
         }
-        print("keyboard Will appear Execute")
+        contentTextView.font = UIFont.preferredFont(forTextStyle: .headline)
+    
+        contentTextView.delegate = self
     }
     
-    
-    @objc func keyboardWillDisappear(noti: NSNotification) {
-        if self.view.frame.origin.y != CGFloat(restoreFrameValue) {
-            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-                let keyboardRectangle = keyboardFrame.cgRectValue
-                let keyboardHeight = keyboardRectangle.height
-                self.view.frame.origin.y += keyboardHeight
-            }
-            print("keyboard Will Disappear Execute")
-        }
-    }
-      
+     
 
 
 }
@@ -84,19 +66,62 @@ extension ViewController: UITextViewDelegate{
         let size = CGSize(width: view.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
-        if estimatedSize.height > textView.frame.height
-            && estimatedSize.height < 300
-        {
-            textView.snp.remakeConstraints{ make in
-                make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-                make.height.equalTo(estimatedSize)
-            }
+        textView.snp.remakeConstraints{ make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(200)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(estimatedSize)
         }
         
-//        textView.snp.remakeConstraints{ make in
-//            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-//            make.height.equalTo(estimatedSize)
+//        if estimatedSize.height > textView.frame.height
+//            && estimatedSize.height < 300
+//        {
+//            textView.snp.remakeConstraints{ make in
+//                make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+//                make.height.equalTo(estimatedSize)
+//            }
 //        }
+//
+
     }
 }
 
+
+// MARK:keyboard
+//extension ViewController{
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+//
+//    }
+//
+//    @objc func keyboardWillAppear(noti: Notification){
+//        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+//            self.view.frame.origin.y -= keyboardHeight
+//        }
+//        print("keyboard Will appear Execute")
+//    }
+//
+//
+//    @objc func keyboardWillDisappear(noti: NSNotification) {
+//        if self.view.frame.origin.y != CGFloat(restoreFrameValue) {
+//            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//                let keyboardRectangle = keyboardFrame.cgRectValue
+//                let keyboardHeight = keyboardRectangle.height
+//                self.view.frame.origin.y += keyboardHeight
+//            }
+//            print("keyboard Will Disappear Execute")
+//        }
+//    }
+//
+//}
