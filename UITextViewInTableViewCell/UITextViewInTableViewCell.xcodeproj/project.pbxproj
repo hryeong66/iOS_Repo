@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		3CC27681267B3531006903D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2767F267B3531006903D5 /* Main.storyboard */; };
 		3CC27683267B3533006903D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC27682267B3533006903D5 /* Assets.xcassets */; };
 		3CC27686267B3533006903D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC27684267B3533006903D5 /* LaunchScreen.storyboard */; };
+		3CC2768F267B363B006903D5 /* TextViewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2768D267B363B006903D5 /* TextViewTVC.swift */; };
+		3CC27690267B363B006903D5 /* TextViewTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2768E267B363B006903D5 /* TextViewTVC.xib */; };
+		DF1B60229BAD20B420E2F93B /* Pods_UITextViewInTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98B2671505125CDE97C7156 /* Pods_UITextViewInTableViewCell.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		3CC27682267B3533006903D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CC27685267B3533006903D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CC27687267B3533006903D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CC2768D267B363B006903D5 /* TextViewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTVC.swift; sourceTree = "<group>"; };
+		3CC2768E267B363B006903D5 /* TextViewTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTVC.xib; sourceTree = "<group>"; };
+		3D3F617D40183F4FBD285A6F /* Pods-UITextViewInTableViewCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITextViewInTableViewCell.debug.xcconfig"; path = "Target Support Files/Pods-UITextViewInTableViewCell/Pods-UITextViewInTableViewCell.debug.xcconfig"; sourceTree = "<group>"; };
+		96CD38451928CD1CF9FCEF27 /* Pods-UITextViewInTableViewCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITextViewInTableViewCell.release.xcconfig"; path = "Target Support Files/Pods-UITextViewInTableViewCell/Pods-UITextViewInTableViewCell.release.xcconfig"; sourceTree = "<group>"; };
+		D98B2671505125CDE97C7156 /* Pods_UITextViewInTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITextViewInTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1B60229BAD20B420E2F93B /* Pods_UITextViewInTableViewCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				3CC27678267B3531006903D5 /* UITextViewInTableViewCell */,
 				3CC27677267B3531006903D5 /* Products */,
+				9AE2CDC40BF00B37E2C8ED44 /* Pods */,
+				61CA53D66DFE2EA59D53CD64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +74,27 @@
 				3CC27682267B3533006903D5 /* Assets.xcassets */,
 				3CC27684267B3533006903D5 /* LaunchScreen.storyboard */,
 				3CC27687267B3533006903D5 /* Info.plist */,
+				3CC2768D267B363B006903D5 /* TextViewTVC.swift */,
+				3CC2768E267B363B006903D5 /* TextViewTVC.xib */,
 			);
 			path = UITextViewInTableViewCell;
+			sourceTree = "<group>";
+		};
+		61CA53D66DFE2EA59D53CD64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D98B2671505125CDE97C7156 /* Pods_UITextViewInTableViewCell.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AE2CDC40BF00B37E2C8ED44 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D3F617D40183F4FBD285A6F /* Pods-UITextViewInTableViewCell.debug.xcconfig */,
+				96CD38451928CD1CF9FCEF27 /* Pods-UITextViewInTableViewCell.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CC2768A267B3533006903D5 /* Build configuration list for PBXNativeTarget "UITextViewInTableViewCell" */;
 			buildPhases = (
+				DBB75AB011092DFB67D593A5 /* [CP] Check Pods Manifest.lock */,
 				3CC27672267B3531006903D5 /* Sources */,
 				3CC27673267B3531006903D5 /* Frameworks */,
 				3CC27674267B3531006903D5 /* Resources */,
+				240646F955F6E78D02FB84EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC27686267B3533006903D5 /* LaunchScreen.storyboard in Resources */,
+				3CC27690267B363B006903D5 /* TextViewTVC.xib in Resources */,
 				3CC27683267B3533006903D5 /* Assets.xcassets in Resources */,
 				3CC27681267B3531006903D5 /* Main.storyboard in Resources */,
 			);
@@ -132,12 +165,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		240646F955F6E78D02FB84EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UITextViewInTableViewCell/Pods-UITextViewInTableViewCell-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UITextViewInTableViewCell/Pods-UITextViewInTableViewCell-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UITextViewInTableViewCell/Pods-UITextViewInTableViewCell-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBB75AB011092DFB67D593A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UITextViewInTableViewCell-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3CC27672267B3531006903D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3CC2767E267B3531006903D5 /* ViewController.swift in Sources */,
+				3CC2768F267B363B006903D5 /* TextViewTVC.swift in Sources */,
 				3CC2767A267B3531006903D5 /* AppDelegate.swift in Sources */,
 				3CC2767C267B3531006903D5 /* SceneDelegate.swift in Sources */,
 			);
@@ -283,6 +359,7 @@
 		};
 		3CC2768B267B3533006903D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D3F617D40183F4FBD285A6F /* Pods-UITextViewInTableViewCell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +379,7 @@
 		};
 		3CC2768C267B3533006903D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96CD38451928CD1CF9FCEF27 /* Pods-UITextViewInTableViewCell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
