@@ -24,6 +24,14 @@
                                     <action selector="clickToPresentModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X8t-Hp-scu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f37-AA-m1V">
+                                <rect key="frame" x="179" y="574" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="test2"/>
+                                <connections>
+                                    <action selector="clickToPresentDatePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PoH-u4-gcj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -35,6 +43,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="97" y="89"/>
+        </scene>
+        <!--Date Picker CompactVC-->
+        <scene sceneID="ggl-TZ-gxX">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerCompactVC" id="RbJ-GW-FN1" customClass="DatePickerCompactVC" customModule="UIDatePickerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yki-a3-2gO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gi3-J5-yVg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfY-wL-06R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="738"/>
         </scene>
         <!--Date PickerVC-->
         <scene sceneID="e2f-7Z-SKI">

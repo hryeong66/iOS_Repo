@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		3C4123EE2681D09700ABBD44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C4123ED2681D09700ABBD44 /* Assets.xcassets */; };
 		3C4123F12681D09700ABBD44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4123EF2681D09700ABBD44 /* LaunchScreen.storyboard */; };
 		3C4123F92681D0AE00ABBD44 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4123F82681D0AE00ABBD44 /* DatePickerVC.swift */; };
+		3C4BA540268486990010C99D /* DatePickerCompactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BA53F268486990010C99D /* DatePickerCompactVC.swift */; };
 		B17384CC50A99330AD844032 /* Pods_UIDatePickerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134E4C5F4D0F02169C20BA26 /* Pods_UIDatePickerTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		3C4123F02681D09700ABBD44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C4123F22681D09700ABBD44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C4123F82681D0AE00ABBD44 /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		3C4BA53F268486990010C99D /* DatePickerCompactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCompactVC.swift; sourceTree = "<group>"; };
 		7BFB85083F36217D4C30D310 /* Pods-UIDatePickerTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIDatePickerTest.debug.xcconfig"; path = "Target Support Files/Pods-UIDatePickerTest/Pods-UIDatePickerTest.debug.xcconfig"; sourceTree = "<group>"; };
 		9A58042BAA21F2251B8D69EC /* Pods-UIDatePickerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIDatePickerTest.release.xcconfig"; path = "Target Support Files/Pods-UIDatePickerTest/Pods-UIDatePickerTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				3C4123EF2681D09700ABBD44 /* LaunchScreen.storyboard */,
 				3C4123F22681D09700ABBD44 /* Info.plist */,
 				3C4123F82681D0AE00ABBD44 /* DatePickerVC.swift */,
+				3C4BA53F268486990010C99D /* DatePickerCompactVC.swift */,
 			);
 			path = UIDatePickerTest;
 			sourceTree = "<group>";
@@ -91,7 +94,6 @@
 				7BFB85083F36217D4C30D310 /* Pods-UIDatePickerTest.debug.xcconfig */,
 				9A58042BAA21F2251B8D69EC /* Pods-UIDatePickerTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C4BA540268486990010C99D /* DatePickerCompactVC.swift in Sources */,
 				3C4123E92681D09400ABBD44 /* ViewController.swift in Sources */,
 				3C4123E52681D09400ABBD44 /* AppDelegate.swift in Sources */,
 				3C4123F92681D0AE00ABBD44 /* DatePickerVC.swift in Sources */,
