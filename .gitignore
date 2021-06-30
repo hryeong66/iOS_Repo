@@ -92,4 +92,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-
+#Delete Pods
+*/Pods/ 
