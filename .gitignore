@@ -93,4 +93,10 @@ fastlane/test_output
 iOSInjectionProject/
 
 #Delete Pods
-*/Pods/ 
+*/Pods/
+
+#Delete privacy file
+*/Service.swift
+
+#Delete framework file
+*/TMapSDK.framework/
