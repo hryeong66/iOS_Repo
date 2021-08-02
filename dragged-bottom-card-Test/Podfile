@@ -7,4 +7,5 @@ target 'dragged-bottom-card-Test' do
 
   # Pods for dragged-bottom-card-Test
   pod 'SnapKit', '~> 5.0.0'
+  pod 'Charts'
 end
