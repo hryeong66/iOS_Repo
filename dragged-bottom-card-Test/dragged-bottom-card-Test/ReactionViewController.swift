@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Charts
 
 class ReactionViewController: UIViewController {
 
@@ -22,6 +23,10 @@ class ReactionViewController: UIViewController {
     // default is 30 pt from safe area top
     var cardPanStartingTopConstant : CGFloat = 30.0
     
+    //MARK: Chart Data
+    var numbers: [Double] = [3.0, 2.5, 3.3, 5.5, 2.7, 1.0, 4.2]
+    let dayOfWeek: [String] = ["SUN", "MON", "TUE", "WED", "THu", "FRI", "SAT"]
+    var lineChartView = LineChartView()
     
     //MARK: UIComponent
     private var backgroundImageView = UIImageView()
@@ -42,11 +47,13 @@ class ReactionViewController: UIViewController {
         setupDesignIncardView()
         setupActions()
         setupGesture()
+        changeLineChartdata()
     }
     
     override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-      showCard()
+        showCard()
+        lineChartView.animate(yAxisDuration: 2.0, easingOption: .easeInOutQuint)
     }
 
     
@@ -67,11 +74,28 @@ class ReactionViewController: UIViewController {
             $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
+        
+        view.addSubview(cardView)
+        cardView.backgroundColor = .white
+        cardView.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            self.cardPanStartingTopConstant = 30
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        cardView.addSubview(lineChartView)
+        lineChartView.snp.makeConstraints{
+            $0.top.equalToSuperview().inset(30)
+            $0.leading.equalToSuperview().inset(10)
+            $0.trailing.equalToSuperview().inset(10)
+            $0.height.equalTo(300)
+        }
     }
     
     private func setupDesignIncardView(){
         // round the top left and top right corner of card view
-        
         
         cardView.clipsToBounds = true
         cardView.layer.cornerRadius = 10.0
@@ -80,22 +104,15 @@ class ReactionViewController: UIViewController {
         // hide the card view at the bottom when the View first load
         if let safeAreaHeight = self.view?.safeAreaLayoutGuide.layoutFrame.size.height,
            let bottomPadding = self.view?.safeAreaInsets.bottom {
-            view.addSubview(cardView)
-            cardView.backgroundColor = .white
-            cardView.snp.makeConstraints{
-                $0.top.equalToSuperview().offset(safeAreaHeight+bottomPadding)
-                self.cardPanStartingTopConstant = safeAreaHeight+bottomPadding
-                $0.leading.equalToSuperview()
-                $0.trailing.equalToSuperview()
-                $0.bottom.equalToSuperview()
-            }
+            changeCardViewHeight(height: safeAreaHeight+bottomPadding)
+            self.cardPanStartingTopConstant = safeAreaHeight+bottomPadding
+            
         }else {
             print("이부분이 안됐나?")
         }
         
         // set dimmerview to transparent
         dimmerView.alpha = 0.0
-        
     }
     
     private func changeCardViewHeight(height: CGFloat){
@@ -233,4 +250,45 @@ extension ReactionViewController{
           }
       }
     
+}
+
+
+//MARK: Charts
+extension ReactionViewController{
+    
+    func changeLineChartdata(){
+        var lineChartEntry = [ChartDataEntry]() // graph 에 보여줄 data array
+         // chart data array 에 데이터 추가
+         for i in 0..<numbers.count {
+                let value = ChartDataEntry(x: Double(i), y: numbers[i])
+                lineChartEntry.append(value)
+         }
+        
+        let line1 = LineChartDataSet(entries: lineChartEntry, label: "수영거리")
+        line1.colors = [.gray]
+        line1.circleColors = [NSUIColor.lightGray]
+        line1.circleHoleColor = NSUIColor.systemTeal
+        print("line1.circleRadius = \(line1.circleRadius)")
+        line1.circleRadius = 3.0
+        line1.circleHoleRadius = 3.0
+        print("line1.lineWidth = \(line1.lineWidth)")
+        line1.lineWidth = 3.0
+        
+        
+        line1.mode = .cubicBezier
+        
+        let data = LineChartData(dataSet: line1)
+            
+        lineChartView.data = data
+        lineChartView.xAxis.labelPosition = .bottom
+        lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayOfWeek)
+        lineChartView.xAxis.setLabelCount(dayOfWeek.count, force: true)
+        lineChartView.xAxis.avoidFirstLastClippingEnabled = true
+        lineChartView.xAxis.axisLineWidth = 1.0
+        lineChartView.xAxis.gridColor = .clear // X절편? 라인 색
+//        lineChartView.rightAxis.enabled = false
+        lineChartView.leftAxis.axisLineWidth = 10.0
+        lineChartView.leftAxis.enabled = false
+        
+    }
 }

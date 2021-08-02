@@ -14,6 +14,7 @@
 		3CA06EB326B5261D0026E2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA06EB226B5261D0026E2BC /* Assets.xcassets */; };
 		3CA06EB626B5261D0026E2BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA06EB426B5261D0026E2BC /* LaunchScreen.storyboard */; };
 		3CA06EC226B6B77F0026E2BC /* ReactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA06EC126B6B77F0026E2BC /* ReactionViewController.swift */; };
+		3CA06EC426B6BACC0026E2BC /* Extension+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA06EC326B6BACC0026E2BC /* Extension+UIWindow.swift */; };
 		81B7D941F84E0C3252AA6035 /* Pods_dragged_bottom_card_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281D3B68639C617EF47C93A9 /* Pods_dragged_bottom_card_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		3CA06EB526B5261D0026E2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CA06EB726B5261D0026E2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CA06EC126B6B77F0026E2BC /* ReactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionViewController.swift; sourceTree = "<group>"; };
+		3CA06EC326B6BACC0026E2BC /* Extension+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIWindow.swift"; sourceTree = "<group>"; };
 		F00747132E094002F638CE57 /* Pods-dragged-bottom-card-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dragged-bottom-card-Test.release.xcconfig"; path = "Target Support Files/Pods-dragged-bottom-card-Test/Pods-dragged-bottom-card-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				3CA06EB426B5261D0026E2BC /* LaunchScreen.storyboard */,
 				3CA06EB726B5261D0026E2BC /* Info.plist */,
 				3CA06EC126B6B77F0026E2BC /* ReactionViewController.swift */,
+				3CA06EC326B6BACC0026E2BC /* Extension+UIWindow.swift */,
 			);
 			path = "dragged-bottom-card-Test";
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				3CA06EAE26B5261C0026E2BC /* ViewController.swift in Sources */,
 				3CA06EAA26B5261C0026E2BC /* AppDelegate.swift in Sources */,
 				3CA06EAC26B5261C0026E2BC /* SceneDelegate.swift in Sources */,
+				3CA06EC426B6BACC0026E2BC /* Extension+UIWindow.swift in Sources */,
 				3CA06EC226B6B77F0026E2BC /* ReactionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
